@@ -8,12 +8,10 @@ namespace DrawingApplication.Drawing.Commands
 
 		public void Draw(params string[] parameters)
 		{
-			if (!int.TryParse(parameters[0], out int width)){
-				throw new ArgumentException("width should be an integer");
-			}
-			if (!int.TryParse(parameters[1], out int height)){
-				throw new ArgumentException("height should be an integer");
-			}
+			CommandParameterValidator.ValidateParameterCount(2, parameters);
+
+			int.TryParse(parameters[0], out var width);
+			int.TryParse(parameters[1], out var height);
 			if (width <= 0)
 			{
 				throw new ArgumentException("width should be a positive integer");
