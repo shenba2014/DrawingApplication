@@ -1,11 +1,7 @@
-using DrawingApplication.Drawing;
 using DrawingApplication.Drawing.Commands;
 using DrawingApplication.Drawing.Renders;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DrawingApplication
 {

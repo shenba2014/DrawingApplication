@@ -1,10 +1,6 @@
 ﻿using DrawingApplication.Drawing.Commands;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DrawingApplication.Tests
 {
@@ -22,13 +18,13 @@ namespace DrawingApplication.Tests
 			rectangleDrawingCommand.Draw("14", "1", "18", "3");
 
 			var elements = canvas.Elements;
-			for (int i = 14; i <= 18; i++)
+			for (var i = 14; i <= 18; i++)
 			{
 				Assert.AreEqual("x", elements[i, 1].Value);
 				Assert.AreEqual("x", elements[i, 3].Value);
 			}
 
-			for (int i = 1; i <= 3; i++)
+			for (var i = 1; i <= 3; i++)
 			{
 				Assert.AreEqual("x", elements[14, i].Value);
 				Assert.AreEqual("x", elements[18, i].Value);

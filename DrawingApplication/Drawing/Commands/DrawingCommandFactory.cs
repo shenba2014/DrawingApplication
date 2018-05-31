@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DrawingApplication.Drawing.Commands
 {
@@ -31,7 +27,7 @@ namespace DrawingApplication.Drawing.Commands
 
 		private static void checkCanvas(Canvas canvas)
 		{
-			if (canvas == null) throw new ArgumentException("please create a canvas to do it");
+			if (canvas == null) throw new ArgumentNullException(nameof(canvas), "please create a canvas to do it");
 		}
 	}
 }

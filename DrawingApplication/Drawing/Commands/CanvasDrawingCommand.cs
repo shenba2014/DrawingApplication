@@ -1,21 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DrawingApplication.Drawing.Commands
 {
 	public class CanvasDrawingCommand : IDrawingCommand
 	{
-		private Canvas _canvas;
-		public Canvas Canvas
-		{
-			get
-			{
-				return _canvas;
-			}
-		}
+		public Canvas Canvas { get; private set; }
 
 		public void Draw(params string[] parameters)
 		{
@@ -33,7 +22,7 @@ namespace DrawingApplication.Drawing.Commands
 			{
 				throw new ArgumentException("height should be a positive integer");
 			}
-			_canvas = new Canvas(width, height);
+			Canvas = new Canvas(width, height);
 		}
 	}
 }

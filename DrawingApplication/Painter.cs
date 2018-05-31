@@ -1,17 +1,12 @@
 ﻿using DrawingApplication.Drawing;
 using DrawingApplication.Drawing.Commands;
 using DrawingApplication.Drawing.Renders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DrawingApplication
 {
 	public class Painter
 	{
-		private Canvas _canvas = null;
+		private Canvas _canvas;
 		private readonly IDrawingRender _drawingRender;
 	
 		public Painter(IDrawingRender drawingRender)

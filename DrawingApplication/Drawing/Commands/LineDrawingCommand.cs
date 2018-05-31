@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DrawingApplication.Drawing.Commands
+﻿namespace DrawingApplication.Drawing.Commands
 {
 	public class LineDrawingCommand : IDrawingCommand
 	{
-		private Canvas _canvas;
+		private readonly Canvas _canvas;
 
 		public LineDrawingCommand(Canvas canvas)
 		{
@@ -19,10 +13,10 @@ namespace DrawingApplication.Drawing.Commands
 		{
 			CommandParameterValidator.ValidateParameterCount(4, parameters);
 
-			int.TryParse(parameters[0], out int x1);
-			int.TryParse(parameters[1], out int y1);
-			int.TryParse(parameters[2], out int x2);
-			int.TryParse(parameters[3], out int y2);
+			int.TryParse(parameters[0], out var x1);
+			int.TryParse(parameters[1], out var y1);
+			int.TryParse(parameters[2], out var x2);
+			int.TryParse(parameters[3], out var y2);
 
 			CommandParameterValidator.ValidateXaxisValueRange(_canvas, x1);
 			CommandParameterValidator.ValidateYaxisValueRange(_canvas, y1);

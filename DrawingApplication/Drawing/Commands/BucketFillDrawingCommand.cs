@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DrawingApplication.Drawing.Commands
 {
 	public class BucketFillDrawingCommand : IDrawingCommand
 	{
-		private Canvas _canvas;
+		private readonly Canvas _canvas;
 
-		private static readonly int[] xPositions = new int[] { 0, 0, 1, -1 };
-		private static readonly int[] yPositions = new int[] { 1, -1, 0, 0 };
+		private static readonly int[] xPositions = { 0, 0, 1, -1 };
+		private static readonly int[] yPositions = { 1, -1, 0, 0 };
 
 		public BucketFillDrawingCommand(Canvas canvas)
 		{
